@@ -1,4 +1,16 @@
 ---
 label: Detail Image
 hide_body: false
-fields: []
+fields:
+- name: src
+  type: file
+  config:
+    maxSize: 250
+  label: Image Source
+  description: Image Source URL
+- name: link
+  type: text
+  config:
+    required: false
+  label: Image Link
+  description: Image link when clicked
