@@ -1,6 +1,6 @@
 ---
 title: Lancome Genifique
-layout: blog
+layout: post
 tags: []
 images:
 - "/public/images/2260942.jpeg"
