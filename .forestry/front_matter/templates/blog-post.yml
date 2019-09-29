@@ -27,4 +27,5 @@ fields:
   label: Images
   description: Images
 pages:
+- _posts/test.md
 - _posts/lancome-genifique.md
