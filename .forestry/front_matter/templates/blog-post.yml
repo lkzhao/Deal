@@ -16,3 +16,5 @@ fields:
   config: {}
   label: Images
   description: List of images
+pages:
+- _posts/lancome-genifique.md
