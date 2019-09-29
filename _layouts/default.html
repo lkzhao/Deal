@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+    <div class="wrap">
+      <div class="navbar">
+        <div class="container">
+          <a href="/" title="Home">Deals</a>
+
+          <a href="/guides">Guides</a>
+        </div>
+      </div>
+
+      <div class="container content">
+        {{ content }}
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/public/js/magnificPopup.js"></script>
+
+    {% include masonry.html %}
+    {% include videoAutoPlay.html %}
+    {% include analytics.html %}
+  </body>
+</html>

@@ -1,0 +1,51 @@
+---
+title: Video
+permalink: /video/index.html
+---
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <style type="text/css">
+    body, html{
+      height:100%;
+      position:relative;
+      background: black;
+      overflow: hidden;
+    }
+    video {
+      width: 100%    !important;
+      height: auto   !important;
+      max-height: 100%;
+    }
+  </style>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+
+      
+    <script>
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+    $(document).ready(function(){
+      var path = getUrlParameter('path');
+      $("body").append("<video autoplay controls loop><source src='"+path+"' type='video/mp4'></video>")
+    })
+    </script>
+  </body>
+</html>

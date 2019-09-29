@@ -1,0 +1,71 @@
+<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('.gallery').append("<div class='grid-sizer'/>")
+  $('.gallery').append("<div class='gutter-sizer'/>")
+  $('.gallery-item').magnificPopup({
+    type: 'image',
+    mainClass: 'mfp-with-zoom',
+    gallery:{
+      enabled:true,
+      preload: [1,1]
+    },
+
+    retina: {
+      ratio: 2,
+      replaceSrc: function(item, ratio) {
+        if (item.type == "image")
+          return item.src.replace(/\.\w+$/, function(m) { return '@2x' + m; });
+        return item.src
+      }
+    },
+
+    iframe: {
+      markup: '<div class="mfp-iframe-scaler">'+
+                '<div class="mfp-close"></div>'+
+                '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+              '</div>',
+      patterns: {
+        youtube: {
+          index: 'youtube.com/',
+          id: 'v=',
+          src: '//www.youtube.com/embed/%id%?autoplay=1'
+        },
+        design: {
+          index: 'design/',
+          id: 'design/',
+          src: '/design/%id%'
+        }
+      }
+    },
+
+    zoom: {
+      enabled: true, // By default it's false, so don't forget to enable it
+
+      duration: 300, // duration of the effect, in milliseconds
+      easing: 'ease-in-out', // CSS transition easing function
+
+      // The "opener" function should return the element from which popup will be zoomed in
+      // and to which popup will be scaled down
+      // By defailt it looks for an image tag:
+      opener: function(openerElement) {
+        // openerElement is the element on which popup was initialized, in this case its <a> tag
+        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+        return openerElement.is('img') ? openerElement : openerElement.find('img');
+      }
+    }
+  });
+
+  var $grid = $('.gallery').imagesLoaded( function() {
+    // init Masonry after all images have loaded
+    $grid.one( 'layoutComplete', function(){
+      $('.gallery').addClass('masonry')
+    });
+    $grid.masonry({
+      itemSelector: '.gallery-item',
+      columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer'
+    });
+  });
+});
+</script>

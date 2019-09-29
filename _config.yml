@@ -1,0 +1,20 @@
+excerpt_separator: "<!--more-->"
+highlighter: rouge
+markdown: kramdown
+kramdown: 
+  parse_block_html: true
+url: http://noto.ink
+title: Noto
+author: Luke Zhao
+tagline: A modern writing app
+description: "Noto is a modern writing app. With delightful interactions, powerful editing tools, and a beautiful design, Noto helps you capture the best of your everyday life." 
+plugins:
+  - jekyll-seo-tag
+logo: /public/favicon/favicon-196x196.png
+future: true
+social:
+  name: Luke Zhao
+  links:
+    - https://www.facebook.com/lzhaoyilun
+    - https://www.linkedin.com/in/lkzhao
+    - https://github.com/lkzhao

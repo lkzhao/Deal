@@ -1,0 +1,18 @@
+
+<div class="gallery">
+{% for image in include.images %}
+  {% if image.link%}
+    {% assign imagelink = image.link %}
+  {% else %}
+    {% assign imagelink = image.src %}
+  {% endif %}
+  {% if image.type %}
+    {% assign itemtype = image.type %}
+  {% else %}
+    {% assign itemtype = "image" %}
+  {% endif %}
+  <a href="{{ imagelink }}" class="gallery-item mfp-{{itemtype}} {% if image.class %}{{ image.class }}{% endif %}">
+    <img src="{{ image.src }}" alt="{{ image.name }}" />
+  </a>
+{% endfor %}
+</div>
