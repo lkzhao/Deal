@@ -3,11 +3,11 @@ highlighter: rouge
 markdown: kramdown
 kramdown: 
   parse_block_html: true
-url: http://noto.ink
-title: Noto
-author: Luke Zhao
-tagline: A modern writing app
-description: "Noto is a modern writing app. With delightful interactions, powerful editing tools, and a beautiful design, Noto helps you capture the best of your everyday life." 
+url: http://www.japandeals.com
+title: JapanDeal
+author: Lin
+tagline: Deals for Japanese in North America
+description: "Deals for Japanese in North America" 
 plugins:
   - jekyll-seo-tag
 logo: /public/favicon/favicon-196x196.png
