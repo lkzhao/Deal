@@ -12,9 +12,19 @@ fields:
   name: tags
   label: tags
 - name: images
-  type: image_gallery
-  config: {}
+  type: field_group_list
+  fields:
+  - name: image
+    type: include
+    config: {}
+    template: detail-image
+    label: Image
+    description: Image
+  config:
+    min: 
+    max: 
+    labelField: 
   label: Images
-  description: List of images
+  description: Images
 pages:
 - _posts/lancome-genifique.md
