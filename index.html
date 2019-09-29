@@ -6,25 +6,23 @@ title: Home
 
 <div class="posts">
   {% for post in site.posts %}
-    {% if post.tags contains "deal" %}
-      <div class="post">
-        <h1 class="post-title">
-          <a href="{{ post.url }}">
-            {{ post.title }}
-          </a>
-        </h1>
+    <div class="post">
+      <h1 class="post-title">
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h1>
 
-        <span class="post-date">{{ post.date | date_to_string }}</span>
+      <span class="post-date">{{ post.date | date_to_string }}</span>
 
-        {% if post.images %}
-          {% include gallery.html images=post.images %}
-        {% endif %}
+      {% if post.images %}
+        {% include gallery.html images=post.images %}
+      {% endif %}
 
-        {% if post.excerpt %}
-          {{ post.excerpt }}
-          <a href="{{ post.url }}" class="readmore">Read More</a>
-        {% endif %}
-      </div>
-    {% endif %}
+      {% if post.excerpt %}
+        {{ post.excerpt }}
+        <a href="{{ post.url }}" class="readmore">Read More</a>
+      {% endif %}
+    </div>
   {% endfor %}
 </div>
