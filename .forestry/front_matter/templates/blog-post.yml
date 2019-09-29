@@ -11,3 +11,8 @@ fields:
 - type: list
   name: tags
   label: tags
+- name: images
+  type: image_gallery
+  config: {}
+  label: Images
+  description: List of images
